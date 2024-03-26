@@ -2,17 +2,33 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 import os
 import urllib.parse
+
+
+def get_random_page_urls(driver, languages):
+    base_url = 'https://{lang}.wikipedia.org/wiki/Special:Random'
+    urls = []
+    while len(urls) < 15:
+        for lang in languages:
+            driver.get(base_url.format(lang=lang))
+            urls.append(driver.current_url)
+    return urls
+
 
 def get_urls(driver, base_url):
     driver.get(base_url)
     # Attendre que les liens interlangues soient chargés
-    wait = WebDriverWait(driver, 10)
-    interlanguage_links = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.interlanguage-link a')))
+    wait = WebDriverWait(driver, 20)
 
-    # Récupérer les URLs de tous les liens interlangues disponibles sur la page
-    urls = {link.get_attribute('lang'): link.get_attribute('href') for link in interlanguage_links}
+    urls = {}
+    try :
+        interlanguage_links = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.interlanguage-link a')))
+        urls = {link.get_attribute('lang'): link.get_attribute('href') for link in interlanguage_links}
+
+    except TimeoutException:
+        print(f"Could not find interlanguage links for {base_url}")
     # print(urls)
     return urls
 
@@ -64,10 +80,9 @@ def main():
     driver = webdriver.Chrome()
     
     data_folder = "./data/raw/"
-
-    base_urls = ['https://ar.wikipedia.org/wiki/شجرة', 'https://fr.wikipedia.org/wiki/Biochimie', 'https://en.wikipedia.org/wiki/Natural_language_processing']
     languages = ['ar', 'fr', 'en', 'de', 'es', 'ja', 'ko', 'ru', 'zh']
-    
+    base_urls = get_random_page_urls(driver, languages)
+
     # Boucle sur les URLs de base
     for base_url in base_urls:
         urls = get_urls(driver, base_url)
@@ -80,8 +95,8 @@ def main():
             print(f"Langue: {lang}\nParagraph: {paragraph}\n")
             
             # Write the results to text files
-            write_txt(data_folder, lang, url, paragraph)
-
+            if paragraph:
+                write_txt(data_folder, lang, url, paragraph)
 
     driver.quit()
 
