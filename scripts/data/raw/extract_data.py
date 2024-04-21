@@ -10,7 +10,7 @@ import urllib.parse
 def get_random_page_urls(driver, languages):
     base_url = 'https://{lang}.wikipedia.org/wiki/Special:Random'
     urls = []
-    while len(urls) < 15:
+    while len(urls) < 20:
         for lang in languages:
             driver.get(base_url.format(lang=lang))
             urls.append(driver.current_url)
@@ -19,7 +19,7 @@ def get_random_page_urls(driver, languages):
 
 def get_urls(driver, base_url):
     driver.get(base_url)
-    # Attendre que les liens interlangues soient chargés
+    # Wait for the interlanguage links to load
     wait = WebDriverWait(driver, 20)
 
     urls = {}
@@ -37,7 +37,7 @@ def extract_first_paragraph(driver, url):
     
     paragraph = None
 
-    # Extrait le premier paragraphe
+    # Extract the first paragraph of the article
     try:
         elements = driver.find_elements(By.XPATH, '//*[@id="mw-content-text"]/div/p')
         if elements:
@@ -83,11 +83,11 @@ def main():
     languages = ['ar', 'fr', 'en', 'de', 'es', 'ja', 'ko', 'ru', 'zh']
     base_urls = get_random_page_urls(driver, languages)
 
-    # Boucle sur les URLs de base
+    # Get the URLs for the random pages
     for base_url in base_urls:
         urls = get_urls(driver, base_url)
         
-        # Filter the URLs for the desired languages
+        # Filter out the URLs for languages we are interested in
         filtered_urls = {lang: urls[lang] for lang in languages if lang in urls}
         
         for lang, url in filtered_urls.items():
