@@ -6,6 +6,8 @@ def clean_text(text):
     text = re.sub(r"\[\d+\]", "", text)
     text = re.sub(r"\D\.\d+", ".", text)
     text = re.sub(r"(?<=\D)\d+[,]?", "", text).strip()
+    text = re.sub(r"\n", "", text)
+    text = re.sub(r"\s+", " ", text)
 
     return text
 
