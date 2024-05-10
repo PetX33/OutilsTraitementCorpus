@@ -120,5 +120,4 @@ Ce script fournit des analyses statistiques et calcule des métriques de diversi
 
   - **Évaluation des Modèles** : Création de matrices de confusion et génération de rapports de classification.
 
-- **Utilité du Script**
-Les analyses fournies permettent une compréhension profonde des propriétés linguistiques du corpus, de la diversité lexicale aux distributions des fréquences de mots. Les modèles entraînés offrent des perspectives sur l'identification correcte des langues en utilisant des techniques statistiques et machine learning. Ces analyses sont précieuses pour le développement de modèles NLP optimisés pour différentes langues.
+- **Utilité du Script** : Les analyses fournies permettent une compréhension profonde des propriétés linguistiques du corpus, de la diversité lexicale aux distributions des fréquences de mots. Les modèles entraînés offrent des perspectives sur l'identification correcte des langues en utilisant des techniques statistiques et machine learning. Ces analyses sont précieuses pour le développement de modèles NLP optimisés pour différentes langues.
