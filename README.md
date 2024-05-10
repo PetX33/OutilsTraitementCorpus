@@ -59,7 +59,66 @@
 - **Utilité du script** : Ce script facilite la création d'un ensemble de données équilibré pour les modèles de traitement du langage naturel, en regroupant les paires de phrases segmentées par langue. Le CSV ainsi créé est essentiel pour la formation et l'évaluation de modèles multilingues, et simplifie l'accès aux données textuelles multilingues dans un format structuré.
 
 ### 4. [**analyse_morpho.ipynb**](./scripts/analyse_morpho/analyse_morpho.ipynb) (cours 3)
+
+- **Objectif** : Ce script effectue une analyse morphosyntaxique détaillée sur un corpus multilingue. Il utilise des modèles linguistiques avancés pour tokenizer et annoter les textes, identifiant les parties du discours et les traits morphologiques dans plusieurs langues.
+
+- **Description du processus** :
+  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que pandas, NumPy, Matplotlib, Seaborn, spaCy, stanza, et datasets pour le traitement de données, l'analyse linguistique et la visualisation.
+  - **Chargement des modèles linguistiques** : Téléchargement et chargement de modèles pour différentes langues (anglais, espagnol, allemand, etc.) avec spaCy et Stanza.
+  - **Chargement et préparation des données** : Importation des données à partir d'un CSV, transformation en un objet Dataset pour faciliter les manipulations.
+  - **Tokenization et annotation** : Application de fonctions de tokenization et d'annotation morphosyntaxique sur le texte, utilisant les modèles linguistiques chargés.
+  - **Analyse et comptage des entités** : Analyse des types d'entités linguistiques (parties du discours) présentes dans le corpus et comptage de leur fréquence par langue.
+  - **Visualisation des données** : Création de graphiques en barres pour illustrer la distribution des entités linguistiques par langue et par type d'entité.
+  - **Sauvegarde des résultats** : Enregistrement des données analysées et des graphiques dans des fichiers CSV et images pour une utilisation ultérieure.
+
+- **Utilité du script** : L'analyse morphosyntaxique est essentielle pour comprendre les caractéristiques linguistiques des textes dans différents langages. Ce script fournit des insights précieux sur la structure grammaticale et le style des langues analysées, ce qui est crucial pour des applications telles que la traduction automatique, l'analyse sémantique, et l'enseignement des langues. Les visualisations et les données produites aident également à identifier les particularités et les anomalies linguistiques dans le corpus.
   
 ### 5. [**mesures.ipynb**](./scripts/mesures/evaluation.ipynb) (cours 4)
 
+- **Objectif** : Ce script réalise des analyses statistiques et calcule des métriques de diversité lexicale pour un corpus multilingue. Il évalue la distribution des mots, la diversité lexicale, et applique la loi de Zipf pour comparer l'utilisation des mots dans différentes langues.
+
+- **Description du processus** :
+  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que spaCy, stanza, pandas, seaborn, et matplotlib pour le traitement de données, l'analyse linguistique, et la visualisation.
+  - **Chargement des modèles linguistiques** : Chargement de modèles spaCy et Stanza pour diverses langues pour permettre la tokenisation précise et efficace des textes.
+  - **Chargement des données** : Importation des données textuelles à partir d'un fichier CSV pour l'analyse.
+  - **Tokenisation des textes** : Application d'une tokenisation adaptée à la langue du texte pour transformer le texte brut en tokens.
+  - **Calcul des statistiques descriptives** : Mesure de divers aspects des données, tels que le nombre total de textes, le nombre de textes par langue, et la longueur moyenne des textes en tokens.
+  - **Calcul de la diversité lexicale** : Détermination de la diversité lexicale, qui mesure la richesse du vocabulaire en comparant le nombre de mots uniques au total des mots utilisés.
+  - **Application de la loi de Zipf** : Analyse de la fréquence des mots en fonction de leur rang pour chaque langue, ce qui aide à comprendre la distribution des fréquences de mots selon la loi de Zipf.
+  - **Visualisation** : Création de graphiques pour visualiser la distribution des mots selon la loi de Zipf pour chaque langue, permettant une comparaison visuelle entre les langues.
+  - **Sauvegarde des résultats** : Enregistrement des statistiques et des métriques calculées dans des fichiers CSV pour une utilisation ultérieure.
+
+- **Utilité du script** : Les analyses réalisées par ce script sont essentielles pour comprendre les propriétés linguistiques du corpus, telles que la complexité du texte et la diversité lexicale. Ces informations sont cruciales pour optimiser les modèles de traitement du langage naturel pour différentes langues, assurant que chaque modèle est bien ajusté à la spécificité linguistique de sa langue cible. Les graphiques de la loi de Zipf offrent des insights précieux sur l'usage des mots dans chaque langue, facilitant les comparaisons interlinguistiques.
+
 ### 6. [**evaluation.ipynb**](./scripts/mesures/evaluation.ipynb) (cours 5)
+
+- **Objectif**
+Ce script fournit des analyses statistiques et calcule des métriques de diversité lexicale pour un corpus multilingue. Il analyse la distribution des mots, mesure la diversité lexicale, applique la loi de Zipf pour comparer l'usage des mots dans différentes langues, et entraîne des modèles de classification linguistique.
+
+- **Description du Processus**
+  - **Importation des Bibliothèques** : Utilisation de bibliothèques telles que `pandas`, `matplotlib`, `seaborn`, `spacy`, `stanza`, `langid` et `sklearn` pour le traitement de données, l'analyse linguistique, la visualisation, et le prétraitement.
+
+  - **Chargement des Modèles Linguistiques** : Utilisation de modèles pré-entraînés SpaCy et Stanza pour différentes langues, offrant une tokenisation précise pour l'anglais, le français, le chinois, etc.
+
+  - **Chargement des Données** : Importation des textes à partir d'un fichier CSV pour l'analyse.
+
+  - **Tokenisation et Traitement des Textes** : Application de techniques de tokenisation adaptées à la langue du texte pour extraire les tokens de chaque document.
+
+  - **Calcul des Statistiques Descriptives** : Mesure de diverses statistiques, comme le nombre total de textes, la répartition des langues, et la longueur moyenne des textes.
+
+  - **Calcul de la Diversité Lexicale** : Analyse de la diversité lexicale (richesse en vocabulaire) pour chaque langue.
+
+  - **Application de la Loi de Zipf** : Analyse de la fréquence des mots en fonction de leur rang pour chaque langue.
+
+  - **Visualisation** : Création de graphiques pour visualiser les distributions linguistiques, la diversité lexicale, et la loi de Zipf.
+
+  - **Augmentation des Étiquettes Sous-Représentées** : Application d'un suréchantillonnage aléatoire pour équilibrer les étiquettes sous-représentées.
+
+  - **Création d'Ensembles d'Entraînement et de Test Équilibrés** : Rééchantillonnage des ensembles pour équilibrer les classes.
+
+  - **Entraînement de Modèles de Classification** : Construction de modèles de classification linguistique, utilisant les méthodes `MultinomialNB` et `langid`.
+
+  - **Évaluation des Modèles** : Création de matrices de confusion et génération de rapports de classification.
+
+- **Utilité du Script**
+Les analyses fournies permettent une compréhension profonde des propriétés linguistiques du corpus, de la diversité lexicale aux distributions des fréquences de mots. Les modèles entraînés offrent des perspectives sur l'identification correcte des langues en utilisant des techniques statistiques et machine learning. Ces analyses sont précieuses pour le développement de modèles NLP optimisés pour différentes langues.
