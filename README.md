@@ -114,7 +114,7 @@ Ce script fournit des analyses statistiques et calcule des métriques de diversi
 
   - **Augmentation des Étiquettes Sous-Représentées** : Application d'un suréchantillonnage aléatoire pour équilibrer les étiquettes sous-représentées.
 
-  - **Création d'Ensembles d'Entraînement et de Test Équilibrés** : Rééchantillonnage des ensembles pour équilibrer les classes.
+  - **Création d'Ensembles d'Entraînement, d'évaluation et de Test Équilibrés** : Rééchantillonnage des ensembles pour équilibrer les classes.
 
   - **Entraînement de Modèles de Classification** : Construction de modèles de classification linguistique, utilisant les méthodes `MultinomialNB` et `langid`.
 
