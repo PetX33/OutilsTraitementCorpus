@@ -92,32 +92,15 @@
 
 ### 6. [**evaluation.ipynb**](./scripts/mesures/evaluation.ipynb) (cours 5)
 
-- **Objectif**
-Ce script fournit des analyses statistiques et calcule des métriques de diversité lexicale pour un corpus multilingue. Il analyse la distribution des mots, mesure la diversité lexicale, applique la loi de Zipf pour comparer l'usage des mots dans différentes langues, et entraîne des modèles de classification linguistique.
+- **Objectif** : Ce script évalue les performances d'un modèle de classification de texte multilingue en utilisant des métriques standard telles que la précision, le rappel, le F1-score et la matrice de confusion. Il permet d'évaluer l'efficacité du modèle dans la classification des textes par langue.
 
-- **Description du Processus**
-  - **Importation des Bibliothèques** : Utilisation de bibliothèques telles que `pandas`, `matplotlib`, `seaborn`, `spacy`, `stanza`, `langid` et `sklearn` pour le traitement de données, l'analyse linguistique, la visualisation, et le prétraitement.
+- **description du processus**:
+  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que pandas, sklearn, et matplotlib pour le traitement de données, l'évaluation de modèles, et la visualisation.
+  - **Chargement des données** : Importation des données d'évaluation à partir d'un fichier CSV contenant des paires de phrases et leurs étiquettes de langue.
+  - **Analyse de la distribution des classes** : Calcul de la distribution des classes pour s'assurer de l'équilibre des données et de la représentativité de chaque langue.
+  - **Analyse de la longueur des textes** : Étude de la longueur des textes pour comprendre la variabilité des données et son impact sur la classification.
+  - **Prétraitement des données** : Suppression des outliers et augmentation des données si nécessaire pour obtenir un même nombre d'étiquette par langue.
+  - **Analyse de la diversité lexicale** : Calcul de la diversité lexicale pour chaque langue afin de comprendre la complexité des textes.
+  - **Entraînement et évaluation du modèle** : Entraînement d'un modèle de classification de texte multilingue sur les données d'entraînement et évaluation de ses performances sur les données de test.
 
-  - **Chargement des Modèles Linguistiques** : Utilisation de modèles pré-entraînés SpaCy et Stanza pour différentes langues, offrant une tokenisation précise pour l'anglais, le français, le chinois, etc.
-
-  - **Chargement des Données** : Importation des textes à partir d'un fichier CSV pour l'analyse.
-
-  - **Tokenisation et Traitement des Textes** : Application de techniques de tokenisation adaptées à la langue du texte pour extraire les tokens de chaque document.
-
-  - **Calcul des Statistiques Descriptives** : Mesure de diverses statistiques, comme le nombre total de textes, la répartition des langues, et la longueur moyenne des textes.
-
-  - **Calcul de la Diversité Lexicale** : Analyse de la diversité lexicale (richesse en vocabulaire) pour chaque langue.
-
-  - **Application de la Loi de Zipf** : Analyse de la fréquence des mots en fonction de leur rang pour chaque langue.
-
-  - **Visualisation** : Création de graphiques pour visualiser les distributions linguistiques, la diversité lexicale, et la loi de Zipf.
-
-  - **Augmentation des Étiquettes Sous-Représentées** : Application d'un suréchantillonnage aléatoire pour équilibrer les étiquettes sous-représentées.
-
-  - **Création d'Ensembles d'Entraînement, d'évaluation et de Test Équilibrés** : Rééchantillonnage des ensembles pour équilibrer les classes.
-
-  - **Entraînement de Modèles de Classification** : Construction de modèles de classification linguistique, utilisant les méthodes `MultinomialNB` et `langid`.
-
-  - **Évaluation des Modèles** : Création de matrices de confusion et génération de rapports de classification.
-
-- **Utilité du Script** : Les analyses fournies permettent une compréhension profonde des propriétés linguistiques du corpus, de la diversité lexicale aux distributions des fréquences de mots. Les modèles entraînés offrent des perspectives sur l'identification correcte des langues en utilisant des techniques statistiques et machine learning. Ces analyses sont précieuses pour le développement de modèles NLP optimisés pour différentes langues.
+- **Utilité du script** : Ce script est essentiel pour évaluer la qualité du corpus et la performance du modèle de classification multilingue. Il fournit des informations précieuses sur la capacité du modèle à identifier correctement la langue des textes, en utilisant des métriques standard pour évaluer sa précision, son rappel et son F1-score. Les analyses effectuées aident à identifier les forces et les faiblesses du modèle, et à guider les améliorations futures pour une classification plus précise et robuste.
