@@ -90,7 +90,7 @@
 
 - **Utilité du script** : Les analyses réalisées par ce script sont essentielles pour comprendre les propriétés linguistiques du corpus, telles que la complexité du texte et la diversité lexicale. Ces informations sont cruciales pour optimiser les modèles de traitement du langage naturel pour différentes langues, assurant que chaque modèle est bien ajusté à la spécificité linguistique de sa langue cible. Les graphiques de la loi de Zipf offrent des insights précieux sur l'usage des mots dans chaque langue, facilitant les comparaisons interlinguistiques.
 
-### 6. [**evaluation.ipynb**](./scripts/mesures/evaluation.ipynb) (cours 5)
+### 6. [**evaluation.ipynb**](./scripts/mesures/evaluation.ipynb) (cours 5-6)
 
 - **Objectif** : Ce script évalue les performances d'un modèle de classification de texte multilingue en utilisant des métriques standard telles que la précision, le rappel, le F1-score et la matrice de confusion. Il permet d'évaluer l'efficacité du modèle dans la classification des textes par langue.
 
