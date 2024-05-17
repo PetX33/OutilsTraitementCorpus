@@ -78,10 +78,10 @@
 - **Objectif** : Ce script réalise des analyses statistiques et calcule des métriques de diversité lexicale pour un corpus multilingue. Il évalue la distribution des mots, la diversité lexicale, et applique la loi de Zipf pour comparer l'utilisation des mots dans différentes langues.
 
 - **Description du processus** :
-  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que spaCy, stanza, pandas, seaborn, et matplotlib pour le traitement de données, l'analyse linguistique, et la visualisation.
-  - **Chargement des modèles linguistiques** : Chargement de modèles spaCy et Stanza pour diverses langues pour permettre la tokenisation précise et efficace des textes.
+  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que pandas, seaborn, et matplotlib pour le traitement de données, l'analyse linguistique, et la visualisation.
+  - **Chargement des modèles linguistiques** : Chargement du modèle XLM-RoBERTa.
   - **Chargement des données** : Importation des données textuelles à partir d'un fichier CSV pour l'analyse.
-  - **Tokenisation des textes** : Application d'une tokenisation adaptée à la langue du texte pour transformer le texte brut en tokens.
+  - **Tokenisation des textes** : Application d'une tokenisation via le tokenizer XLM-RoBERTa, également utilisé sur le corpus de référence.
   - **Calcul des statistiques descriptives** : Mesure de divers aspects des données, tels que le nombre total de textes, le nombre de textes par langue, et la longueur moyenne des textes en tokens.
   - **Calcul de la diversité lexicale** : Détermination de la diversité lexicale, qui mesure la richesse du vocabulaire en comparant le nombre de mots uniques au total des mots utilisés.
   - **Application de la loi de Zipf** : Analyse de la fréquence des mots en fonction de leur rang pour chaque langue, ce qui aide à comprendre la distribution des fréquences de mots selon la loi de Zipf.
@@ -95,12 +95,13 @@
 - **Objectif** : Ce script évalue les performances d'un modèle de classification de texte multilingue en utilisant des métriques standard telles que la précision, le rappel, le F1-score et la matrice de confusion. Il permet d'évaluer l'efficacité du modèle dans la classification des textes par langue.
 
 - **description du processus**:
-  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que pandas, sklearn, et matplotlib pour le traitement de données, l'évaluation de modèles, et la visualisation.
+  - **Importation des bibliothèques** : Utilisation de bibliothèques telles que pandas, sklearn, numpy, matplotlib ou encore transformers pour le traitement de données, l'évaluation de modèles, et la visualisation.
   - **Chargement des données** : Importation des données d'évaluation à partir d'un fichier CSV contenant des paires de phrases et leurs étiquettes de langue.
   - **Analyse de la distribution des classes** : Calcul de la distribution des classes pour s'assurer de l'équilibre des données et de la représentativité de chaque langue.
   - **Analyse de la longueur des textes** : Étude de la longueur des textes pour comprendre la variabilité des données et son impact sur la classification.
   - **Prétraitement des données** : Suppression des outliers et augmentation des données si nécessaire pour obtenir un même nombre d'étiquette par langue.
   - **Analyse de la diversité lexicale** : Calcul de la diversité lexicale pour chaque langue afin de comprendre la complexité des textes.
-  - **Entraînement et évaluation du modèle** : Entraînement d'un modèle de classification de texte multilingue sur les données d'entraînement et évaluation de ses performances sur les données de test.
+  - **Entraînement et évaluation du modèle** : Entraînement d'un modèle de classification de texte multilingue sur les données d'entraînement et évaluation de ses performances sur les données de test, reprenant presque le même processus que pour le [corpus de référence](https://colab.research.google.com/drive/15LJTckS6gU3RQOmjLqxVNBmbsBdnUEvl?usp=sharing#scrollTo=arQq4UNgrsiB) .
 
 - **Utilité du script** : Ce script est essentiel pour évaluer la qualité du corpus et la performance du modèle de classification multilingue. Il fournit des informations précieuses sur la capacité du modèle à identifier correctement la langue des textes, en utilisant des métriques standard pour évaluer sa précision, son rappel et son F1-score. Les analyses effectuées aident à identifier les forces et les faiblesses du modèle, et à guider les améliorations futures pour une classification plus précise et robuste.
+
