@@ -84,6 +84,7 @@
   - **Tokenisation des textes** : Application d'une tokenisation via le tokenizer XLM-RoBERTa, également utilisé sur le corpus de référence.
   - **Calcul des statistiques descriptives** : Mesure de divers aspects des données, tels que le nombre total de textes, le nombre de textes par langue, et la longueur moyenne des textes en tokens.
   - **Calcul de la diversité lexicale** : Détermination de la diversité lexicale, qui mesure la richesse du vocabulaire en comparant le nombre de mots uniques au total des mots utilisés.
+  - **Calcul la corrélation entre la longueure des textes et la diversité lexicale** : Analyse de la relation entre la longueur des textes et la diversité lexicale pour chaque langue.
   - **Application de la loi de Zipf** : Analyse de la fréquence des mots en fonction de leur rang pour chaque langue, ce qui aide à comprendre la distribution des fréquences de mots selon la loi de Zipf.
   - **Visualisation** : Création de graphiques pour visualiser la distribution des mots selon la loi de Zipf pour chaque langue, permettant une comparaison visuelle entre les langues.
   - **Sauvegarde des résultats** : Enregistrement des statistiques et des métriques calculées dans des fichiers CSV pour une utilisation ultérieure.
@@ -104,4 +105,3 @@
   - **Entraînement et évaluation du modèle** : Entraînement d'un modèle de classification de texte multilingue sur les données d'entraînement et évaluation de ses performances sur les données de test, reprenant presque le même processus que pour le [corpus de référence](https://colab.research.google.com/drive/15LJTckS6gU3RQOmjLqxVNBmbsBdnUEvl?usp=sharing#scrollTo=arQq4UNgrsiB) .
 
 - **Utilité du script** : Ce script est essentiel pour évaluer la qualité du corpus et la performance du modèle de classification multilingue. Il fournit des informations précieuses sur la capacité du modèle à identifier correctement la langue des textes, en utilisant des métriques standard pour évaluer sa précision, son rappel et son F1-score. Les analyses effectuées aident à identifier les forces et les faiblesses du modèle, et à guider les améliorations futures pour une classification plus précise et robuste.
-
